@@ -3,8 +3,8 @@ import './App.css';
 import Header from './components/header';
 import { Routes, Route,  Navigate} from 'react-router-dom';
 import HomeScreen from './screens/HomeScreen';
- import EditUserScreen from './screens/EditUserScreen';
- import CreateUserScreen from './screens/CreateUserScreen';
+ import EditContactScreen from './screens/EditContactScreen';
+ import CreateContactScreen from './screens/CreateContactScreen';
 
 
 
@@ -16,8 +16,8 @@ let App = ()=> {
       <Routes>
         <Route path="/" element={<Navigate to='/home'/>}/>
         <Route path="/home" element={<HomeScreen/>}/>
-        <Route path="/create" element={<CreateUserScreen/>}/>
-        <Route path="/edit/:id" element={<EditUserScreen/>}/> 
+        <Route path="/create" element={<CreateContactScreen/>}/>
+        <Route path="/edit/:id" element={<EditContactScreen/>}/> 
       </Routes>
 </React.Fragment>
   
