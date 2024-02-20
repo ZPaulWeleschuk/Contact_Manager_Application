@@ -1,0 +1,34 @@
+{
+  "contacts": [
+    {
+      "id": "1",
+      "firstName": "John",
+      "lastName": "Doe",
+      "email": "johndoe@example.com"
+    },
+    {
+      "id": "2",
+      "firstName": "Anna",
+      "lastName": "Smith",
+      "email": "annasmith@example.com"
+    },
+    {
+      "id": "3",
+      "firstName": "Peter",
+      "lastName": "Jones",
+      "email": "peterJones@example.com"
+    },
+    {
+      "id": "4",
+      "firstName": "James",
+      "lastName": "Anderson",
+      "email": "jamesAnderson@example.com"
+    },
+    {
+      "id": "5",
+      "firstName": "Jenny",
+      "lastName": "Doe",
+      "email": "jennydoe@example.com"
+    }
+  ]
+}
