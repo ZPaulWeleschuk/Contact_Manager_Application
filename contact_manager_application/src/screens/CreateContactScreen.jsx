@@ -40,7 +40,7 @@ const CreateContactScreen = () => {
 
   useEffect(() => {
     let firstNameIsValid =
-      contact.firstName === "" || regexFirstName.test(contact.firstName);
+       regexFirstName.test(contact.firstName);
     let lastNameIsValid =
       contact.lastName === "" || regexLastName.test(contact.lastName);
     let emailIsValid = regexEmail.test(contact.email);
@@ -76,9 +76,10 @@ const CreateContactScreen = () => {
           className="form-control"
           id="firstName"
           name="firstName"
-          placeholder={"First Name (Optional) 3-25 characters"}
+          placeholder={"First Name (Required) 3-25 characters"}
           value={contact.firstName}
           onChange={handleChange}
+          required
         />
       </div>
       <div className="m-3">
