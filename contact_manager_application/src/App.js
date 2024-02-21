@@ -17,7 +17,7 @@ let App = ()=> {
         <Route path="/" element={<Navigate to='/home'/>}/>
         <Route path="/home" element={<HomeScreen/>}/>
         <Route path="/create" element={<CreateContactScreen/>}/>
-        <Route path="/edit/:id" element={<EditContactScreen/>}/> 
+        <Route path="/edit/:contactId" element={<EditContactScreen/>}/> 
       </Routes>
 </React.Fragment>
   
