@@ -38,13 +38,27 @@ const CreateContactScreen = () => {
     }
   }
 
+  async function isEmailUnique(email) {
+    try {
+      let data = await ContactService.fetchContacts();
+      const emails = data.map(contact => contact.email);
+      return !emails.includes(email);
+    } catch (error) {
+      console.error('Error checking email:', error);
+      return false;
+    }
+  }
+
   useEffect(() => {
+    async function checkIsValid() {
     let firstNameIsValid =
        regexFirstName.test(contact.firstName);
     let lastNameIsValid =
       contact.lastName === "" || regexLastName.test(contact.lastName);
-    let emailIsValid = regexEmail.test(contact.email);
+    let emailIsValid = regexEmail.test(contact.email) && await isEmailUnique(contact.email);
     setIsFormValid(firstNameIsValid && lastNameIsValid && emailIsValid);
+    }
+    checkIsValid();
   }, [contact]);
 
   const handleChange = (e) => {
