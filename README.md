@@ -13,12 +13,13 @@ Manager your contacts with this application. This application uses React with a 
 
 ### How to run:
 - Install React and Node
-#### Front-end:
-- Install bootstrap, react-router-dom
-- In terminal: npm start
 
 #### Back-end (In separate terminal, navigate to backend directory) : 
 - Install json-server
+- In terminal: npm start
+
+#### Front-end:
+- Install bootstrap, react-router-dom
 - In terminal: npm start
  
 
