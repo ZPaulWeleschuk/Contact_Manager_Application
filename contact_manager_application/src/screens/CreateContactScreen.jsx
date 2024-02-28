@@ -18,21 +18,14 @@ const CreateContactScreen = () => {
   async function generateUniqueId() {
     try {
       let data = await ContactService.fetchContacts();
-      let randNum = Math.floor(Math.random() * 100000000) + 1;
-      let isUnique = true;
-      // Loop through the JSON data and check if randNum is not contained in any of the objects
-      data.forEach((obj) => {
-        if (obj.id === randNum.toString()) {
-          isUnique = false;
-        }
-      });
-      // If randNum is not contained in any of the objects, return randNum
-      if (isUnique) {
-        return randNum.toString();
-      } else {
-        // If randNum is already used, call the function again to generate a new randNum
-        return generateUniqueId();
-      }
+      let ids = new Set(data.map(obj => obj.id));
+      let randNum;
+  
+      do {
+        randNum = Math.floor(Math.random() * 100000000) + 1;
+      } while (ids.has(randNum.toString()));
+  
+      return randNum.toString();
     } catch (error) {
       console.error("Error fetching Contacts:", error);
     }
